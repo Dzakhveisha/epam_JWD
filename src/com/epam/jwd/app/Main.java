@@ -12,7 +12,7 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
-        Point points[] = new Point[4];
+        Point[] points = new Point[4];
         points[0] = new Point(20, 20);
         points[1] = new Point(12, 12);
         points[2] = new Point(24, -7);
@@ -23,7 +23,7 @@ public class Main {
             i++;
         } while (i < points.length);
 
-        Line lines[] = new Line[2];
+        Line[] lines = new Line[2];
         lines[0] = new Line(points[0], points[1]);
         lines[1] = new Line(points[3], points[3]);
         for (i = 0; i < lines.length; i++) {
@@ -49,7 +49,7 @@ public class Main {
             }
         }
 
-        Square squares[] = new Square[1];
+        Square[] squares = new Square[1];
         squares[0] = new Square(points[0], 78);
         for (i = 0; i < squares.length; i++) {
             if (squares[i].isFigure()) {
