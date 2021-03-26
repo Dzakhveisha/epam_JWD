@@ -30,11 +30,11 @@ public class Main {
             if (lines[i].isFigure()) {
                 LOGGER.info(lines[i].toString());
             } else {
-                LOGGER.error("Объект " + lines[i].toString() + "не является фигурой.");
+                LOGGER.error("Объект " + lines[i].toString() + "не является фигурой линия.");
             }
         }
 
-        Triangle triangles[] = new Triangle[2];
+        Triangle[] triangles = new Triangle[2];
         triangles[0] = new Triangle(points[0], points[2], points[2]);
         triangles[1] = new Triangle(points[2], points[3], points[0]);
         for (i = 0; i < triangles.length; i++) {
@@ -45,14 +45,23 @@ public class Main {
                     LOGGER.error("Треугольник " + triangles[i].toString() + "не может существовать.");
                 }
             } else {
-                LOGGER.error("Объект " + triangles[i].toString() + "не является фигурой.");
+                LOGGER.error("Объект " + triangles[i].toString() + "не является фигурой треугольник");
             }
         }
 
         Square squares[] = new Square[1];
-        squares[0] = new Square(points[0], points[1], points[2], points[3]);
+        squares[0] = new Square(points[0], 78);
         for (i = 0; i < squares.length; i++) {
-            LOGGER.info(squares[i].toString());
+            if (squares[i].isFigure()) {
+                if (squares[i].isExist()) {
+                    LOGGER.info(squares[i].toString());
+                } else {
+                    LOGGER.error("Фигура " + squares[i].toString() + "не может являться квадратом (существовать).");
+                }
+            } else {
+                LOGGER.error("Объект " + squares[i].toString() + "не является фигурой квадрат");
+            }
+
         }
     }
 

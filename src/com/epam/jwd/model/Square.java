@@ -5,20 +5,29 @@ import java.util.Objects;
 public class Square {
     private Point a; // нижняя левая точка
     private Point b; // верхняя левая точка
-    private Point c; // верхняя права точка
+    private Point c; // верхняя правая точка
     private Point d; // нижняя правая точка
 
-    public Square(Point a, Point b, Point c, Point d){ //
+    public Square(Point a, Point b, Point c, Point d){ // по 4 точкам
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
     }
-    public Square(Point b, Point d){ //по верхней левой и нижней правой точках
-        this.a = new Point(b.getX(), d.getY());
+
+    public Square(Point b, long size){ // по верхней левой точке и длине стороны
+        this.a = new Point(b.getX(), b.getY() - size);
         this.b = b;
-        this.c = new Point(d.getX(), b.getY());
-        this.d = d;
+        this.c = new Point(b.getX() + size, b.getY());
+        this.d = new Point(b.getX() + size, b.getY() + size);
+    }
+
+    public Square(Point a, Point b){   //по верхней левой и нижней левой точке
+        long size = a.getY() - b.getY(); // длина стороны квадрата
+        this.a = a;
+        this.b = b;
+        this.c = new Point(b.getX() + size, b.getY());
+        this.d = new Point(b.getX() + size, a.getY());
     }
 
     public Point getA() {
@@ -35,6 +44,20 @@ public class Square {
 
     public Point getD() {
         return d;
+    }
+
+    public boolean isFigure(){
+        return !( a.equals(b) || a.equals(c) || a.equals(d) || b.equals(c) || b.equals(d) || c.equals(d));
+    }
+
+    public boolean isExist(){
+        if (Math.abs(a.getY() - b.getY()) != Math.abs(c.getX() - b.getX()) )
+            return false;
+        if (Math.abs(c.getX() - b.getX()) != Math.abs(d.getY() - c.getY()) )
+            return false;
+        if (Math.abs(d.getY() - c.getY()) != Math.abs(d.getX() - a.getX()) )
+            return false;
+        else return true;
     }
 
     @Override
