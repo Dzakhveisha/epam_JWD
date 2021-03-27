@@ -27,7 +27,7 @@ public class Main {
         lines[0] = new Line(points[0], points[1]);
         lines[1] = new Line(points[3], points[3]);
         for (i = 0; i < lines.length; i++) {
-            if (lines[i].isFigure()) {
+            if (lines[i].isLine()) {
                 LOGGER.info(lines[i].toString());
             } else {
                 LOGGER.error("Объект " + lines[i].toString() + "не является фигурой линия.");
@@ -36,9 +36,9 @@ public class Main {
 
         Triangle[] triangles = new Triangle[2];
         triangles[0] = new Triangle(points[0], points[2], points[2]);
-        triangles[1] = new Triangle(points[2], points[3], points[0]);
+        triangles[1] = new Triangle(new Point(1,1), new Point(2,2), new Point(-1,-1));
         for (i = 0; i < triangles.length; i++) {
-            if (triangles[i].isFigure()) {
+            if (triangles[i].isTriangle()) {
                 if (triangles[i].isExists()) {
                     LOGGER.info(triangles[i].toString());
                 } else {
@@ -50,9 +50,9 @@ public class Main {
         }
 
         Square[] squares = new Square[1];
-        squares[0] = new Square(points[0], 78);
+        squares[0] = new Square(points[0], points[2], points[2],points[3]);
         for (i = 0; i < squares.length; i++) {
-            if (squares[i].isFigure()) {
+            if (squares[i].isSquare()) {
                 if (squares[i].isExist()) {
                     LOGGER.info(squares[i].toString());
                 } else {

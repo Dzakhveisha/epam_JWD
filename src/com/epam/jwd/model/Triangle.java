@@ -28,7 +28,7 @@ public class Triangle {
     public boolean isExists(){
         return Math.abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY())) / 2 != 0;
     }
-    public boolean isFigure(){
+    public boolean isTriangle(){
         return  !(a.equals(b) || b.equals(c) || c.equals(a));
     }
 

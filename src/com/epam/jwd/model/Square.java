@@ -46,7 +46,7 @@ public class Square {
         return d;
     }
 
-    public boolean isFigure(){
+    public boolean isSquare(){
         return !( a.equals(b) || a.equals(c) || a.equals(d) || b.equals(c) || b.equals(d) || c.equals(d));
     }
 

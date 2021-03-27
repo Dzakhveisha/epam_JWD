@@ -19,8 +19,8 @@ public class Line {
         return secondPoint;
     }
 
-    public boolean isFigure(){
-        return firstPoint != secondPoint;
+    public boolean isLine(){
+        return firstPoint.equals(secondPoint);
     }
 
     @Override
