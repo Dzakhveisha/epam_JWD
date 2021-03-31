@@ -6,7 +6,7 @@ public class Line {
     private Point firstPoint;
     private Point secondPoint;
 
-    public Line(Point firstPoint, Point secondPoint){
+    public Line(Point firstPoint, Point secondPoint) {
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
     }
@@ -19,7 +19,7 @@ public class Line {
         return secondPoint;
     }
 
-    public boolean isLine(){
+    public boolean isLine() {
         return firstPoint.equals(secondPoint);
     }
 

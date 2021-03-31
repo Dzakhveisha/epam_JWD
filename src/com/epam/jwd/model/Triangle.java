@@ -7,7 +7,7 @@ public class Triangle {
     private Point b;
     private Point c;
 
-    public Triangle(Point a, Point b, Point c){
+    public Triangle(Point a, Point b, Point c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -25,11 +25,12 @@ public class Triangle {
         return c;
     }
 
-    public boolean isExists(){
+    public boolean isExists() {
         return Math.abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY())) / 2 != 0;
     }
-    public boolean isTriangle(){
-        return  !(a.equals(b) || b.equals(c) || c.equals(a));
+
+    public boolean isTriangle() {
+        return !(a.equals(b) || b.equals(c) || c.equals(a));
     }
 
     @Override

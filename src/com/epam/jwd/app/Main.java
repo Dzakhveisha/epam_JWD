@@ -36,7 +36,7 @@ public class Main {
 
         Triangle[] triangles = new Triangle[2];
         triangles[0] = new Triangle(points[0], points[2], points[2]);
-        triangles[1] = new Triangle(new Point(1,1), new Point(2,2), new Point(-1,-1));
+        triangles[1] = new Triangle(new Point(1, 1), new Point(2, 2), new Point(-1, -1));
         for (i = 0; i < triangles.length; i++) {
             if (triangles[i].isTriangle()) {
                 if (triangles[i].isExists()) {
@@ -50,7 +50,7 @@ public class Main {
         }
 
         Square[] squares = new Square[1];
-        squares[0] = new Square(points[0], points[2], points[2],points[3]);
+        squares[0] = new Square(points[0], points[2], points[2], points[3]);
         for (i = 0; i < squares.length; i++) {
             if (squares[i].isSquare()) {
                 if (squares[i].isExist()) {
