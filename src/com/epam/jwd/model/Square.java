@@ -3,10 +3,10 @@ package com.epam.jwd.model;
 import java.util.Objects;
 
 public class Square {
-    private Point a; // нижняя левая точка
-    private Point b; // верхняя левая точка
-    private Point c; // верхняя правая точка
-    private Point d; // нижняя правая точка
+    private final Point a; // нижняя левая точка
+    private final Point b; // верхняя левая точка
+    private final Point c; // верхняя правая точка
+    private final Point d; // нижняя правая точка
 
     public Square(Point a, Point b, Point c, Point d) { // по 4 точкам
         this.a = a;
