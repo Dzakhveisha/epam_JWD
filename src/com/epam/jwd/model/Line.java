@@ -1,14 +1,18 @@
 package com.epam.jwd.model;
 
+import com.epam.jwd.strategy.LineProperties;
+import com.epam.jwd.strategy.SquareProperties;
+
 import java.util.Objects;
 
-public class Line {
+public class Line extends Figure {
     private final Point firstPoint;
     private final Point secondPoint;
 
-    public Line(Point firstPoint, Point secondPoint) {
+    protected Line(Point firstPoint, Point secondPoint) {
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
+        this.propertiesStrategy = new LineProperties();
     }
 
     public Point getFirstPoint() {
@@ -43,4 +47,5 @@ public class Line {
                 ", secondPoint=" + secondPoint +
                 '}';
     }
+
 }
