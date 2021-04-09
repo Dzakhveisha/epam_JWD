@@ -1,7 +1,6 @@
 package com.epam.jwd.model;
 
-import com.epam.jwd.strategy.LineProperties;
-import com.epam.jwd.strategy.SquareProperties;
+import com.epam.jwd.strategy.LinePropertiesStrategy;
 
 import java.util.Objects;
 
@@ -9,10 +8,10 @@ public class Line extends Figure {
     private final Point firstPoint;
     private final Point secondPoint;
 
-    protected Line(Point firstPoint, Point secondPoint) {
+    Line(Point firstPoint, Point secondPoint) {
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
-        this.propertiesStrategy = new LineProperties();
+        this.propertiesStrategy = new LinePropertiesStrategy();
     }
 
     public Point getFirstPoint() {

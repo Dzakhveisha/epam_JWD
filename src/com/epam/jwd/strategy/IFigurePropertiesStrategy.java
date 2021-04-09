@@ -4,7 +4,8 @@ import com.epam.jwd.model.Figure;
 
 public interface IFigurePropertiesStrategy {
 
-    long perimeter();
-    float area();
+    public double perimeter(Figure figure);
+
+    public double area(Figure figure);
 
 }

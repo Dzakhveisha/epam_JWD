@@ -17,7 +17,6 @@ public class Main {
         points[2] = new Point(24, -7);
         points[3] = new Point(21, 21);
 
-
         Figure line = figureFactory.createFigure(FigureFactory.FigureType.LINE, points[0], points[1]);
         LOGGER.info("Линия {}",line.toString());
 

@@ -1,6 +1,6 @@
 package com.epam.jwd.model;
 
-import com.epam.jwd.strategy.SquareProperties;
+import com.epam.jwd.strategy.SquarePropertiesStrategy;
 
 import java.util.Objects;
 
@@ -10,12 +10,12 @@ public class Square extends Figure {
     private final Point c; // top-right
     private final Point d; //bottom-right
 
-    protected Square(Point a, Point b, Point c, Point d) { // по 4 точкам
+    Square(Point a, Point b, Point c, Point d) { // по 4 точкам
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
-        this.propertiesStrategy = new SquareProperties();
+        this.propertiesStrategy = new SquarePropertiesStrategy();
     }
 
     protected Square(Point a, Point b) {   //by top-left and bottom-left points
@@ -24,7 +24,7 @@ public class Square extends Figure {
         this.b = b;
         this.c = new Point(b.getX() + size, b.getY());
         this.d = new Point(b.getX() + size, a.getY());
-        this.propertiesStrategy = new SquareProperties();
+        this.propertiesStrategy = new SquarePropertiesStrategy();
     }
 
     public Point getA() {

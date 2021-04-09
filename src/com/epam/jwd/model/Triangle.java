@@ -1,7 +1,6 @@
 package com.epam.jwd.model;
 
-import com.epam.jwd.strategy.SquareProperties;
-import com.epam.jwd.strategy.TriangleProperties;
+import com.epam.jwd.strategy.TrianglePropertiesStrategy;
 
 import java.util.Objects;
 
@@ -10,11 +9,11 @@ public class Triangle extends Figure {
     private final Point b;
     private final Point c;
 
-    protected Triangle(Point a, Point b, Point c) {
+    Triangle(Point a, Point b, Point c) {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.propertiesStrategy = new TriangleProperties();
+        this.propertiesStrategy = new TrianglePropertiesStrategy();
     }
 
     public Point getA() {
