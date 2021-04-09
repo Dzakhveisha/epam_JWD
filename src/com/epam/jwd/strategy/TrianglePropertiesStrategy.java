@@ -1,12 +1,27 @@
 package com.epam.jwd.strategy;
 
-import com.epam.jwd.model.Figure;
 import com.epam.jwd.model.Point;
 import com.epam.jwd.model.Triangle;
 
-public class TrianglePropertiesStrategy implements IFigurePropertiesStrategy {
+public class TrianglePropertiesStrategy implements FigurePropertiesStrategy<Triangle> {
+
+    private static TrianglePropertiesStrategy instance = null;
+
+    private TrianglePropertiesStrategy() {}
+
+    public static TrianglePropertiesStrategy getInstance() {    // lazy singleton
+        if (instance == null) {
+            synchronized(TrianglePropertiesStrategy.class) {
+                if (instance == null) {
+                    instance = new TrianglePropertiesStrategy();
+                }
+            }
+        }
+        return instance;
+    }
+
     @Override
-    public double perimeter(Figure figure) {
+    public double perimeter(Triangle figure) {
         Triangle triangle = (Triangle) figure;
         return length(triangle.getA(), triangle.getB()) +
                 length(triangle.getB(), triangle.getC()) +
@@ -14,7 +29,7 @@ public class TrianglePropertiesStrategy implements IFigurePropertiesStrategy {
     }
 
     @Override
-    public double area(Figure figure) {
+    public double area(Triangle figure) {
         Triangle triangle = (Triangle) figure;
         return Math.abs((triangle.getA().getX() - triangle.getC().getX()) * (triangle.getB().getY() - triangle.getC().getY()) -
                 (triangle.getB().getX() - triangle.getC().getX()) * (triangle.getA().getY() - triangle.getC().getY())) / 2.;

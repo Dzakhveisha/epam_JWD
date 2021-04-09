@@ -15,7 +15,7 @@ public class Square extends Figure {
         this.b = b;
         this.c = c;
         this.d = d;
-        this.propertiesStrategy = new SquarePropertiesStrategy();
+        this.propertiesStrategy = SquarePropertiesStrategy.getInstance();
     }
 
     protected Square(Point a, Point b) {   //by top-left and bottom-left points
@@ -24,7 +24,7 @@ public class Square extends Figure {
         this.b = b;
         this.c = new Point(b.getX() + size, b.getY());
         this.d = new Point(b.getX() + size, a.getY());
-        this.propertiesStrategy = new SquarePropertiesStrategy();
+        this.propertiesStrategy = SquarePropertiesStrategy.getInstance();
     }
 
     public Point getA() {

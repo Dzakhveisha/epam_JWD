@@ -1,9 +1,9 @@
 package com.epam.jwd.model;
 
-import com.epam.jwd.strategy.IFigurePropertiesStrategy;
+import com.epam.jwd.strategy.FigurePropertiesStrategy;
 
 public class Figure {
 
- public IFigurePropertiesStrategy propertiesStrategy;
+  public FigurePropertiesStrategy propertiesStrategy;
 
 }

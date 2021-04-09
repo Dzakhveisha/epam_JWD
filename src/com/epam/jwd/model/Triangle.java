@@ -13,7 +13,7 @@ public class Triangle extends Figure {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.propertiesStrategy = new TrianglePropertiesStrategy();
+        this.propertiesStrategy = TrianglePropertiesStrategy.getInstance();
     }
 
     public Point getA() {

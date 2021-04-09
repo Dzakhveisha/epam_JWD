@@ -11,7 +11,7 @@ public class Line extends Figure {
     Line(Point firstPoint, Point secondPoint) {
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
-        this.propertiesStrategy = new LinePropertiesStrategy();
+        this.propertiesStrategy = LinePropertiesStrategy.getInstance();
     }
 
     public Point getFirstPoint() {
@@ -23,7 +23,7 @@ public class Line extends Figure {
     }
 
     public boolean isLine() {
-        return firstPoint.equals(secondPoint);
+        return !firstPoint.equals(secondPoint);
     }
 
     @Override
