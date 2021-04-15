@@ -70,6 +70,20 @@ public class Main {
             }
         }
 
+        MultyAngleFigure polygons[] = new MultyAngleFigure[3];
+        polygons[0] = (MultyAngleFigure) figureFactory.createFigure(FigureFactory.FigureType.MULTI_ANGLE_FIGURE,
+                points[0], points[1], points[2], points[3], new Point(32, 90));
+        polygons[1] = (MultyAngleFigure) figureFactory.createFigure(FigureFactory.FigureType.MULTI_ANGLE_FIGURE,
+                new Point(0,0), new Point(-500, 0), new Point(0, -500), new Point(-500, -500));
+        polygons[2] = (MultyAngleFigure) figureFactory.createFigure(FigureFactory.FigureType.MULTI_ANGLE_FIGURE,
+                points[0], points[1], points[2], points[3], new Point(1,23), new Point(20,98));
+
+        for (i = 0; i < polygons.length; i++){
+            LOGGER.info("Многоугольник {}", polygons[i].toString());
+            LOGGER.info("Площадь: {}",polygons[i].propertiesStrategy.area(polygons[i]));
+            LOGGER.info("Периметр: {}",polygons[i].propertiesStrategy.perimeter(polygons[i]));
+        }
+
     }
 
 }

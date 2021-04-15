@@ -2,7 +2,7 @@ package com.epam.jwd.model;
 
 public class FigureFactory {
 
-    public enum FigureType {LINE, SQUARE, TRIANGLE}
+    public enum FigureType {LINE, SQUARE, TRIANGLE, MULTI_ANGLE_FIGURE}
 
     public Figure createFigure(FigureType type, Point... points) {
 
@@ -26,6 +26,12 @@ public class FigureFactory {
                     figure = new Triangle(points[0], points[1], points[2]);
                 }
                 break;
+            case MULTI_ANGLE_FIGURE:
+                if (points.length <= 6 && points.length >= 4) {
+                    figure = new MultyAngleFigure(points);
+                }
+                break;
+
         }
         return figure;
     }
