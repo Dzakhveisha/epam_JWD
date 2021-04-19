@@ -36,4 +36,21 @@ public class MultyAngleFigure extends Figure {
                 "points=" + Arrays.toString(points) +
                 '}';
     }
+
+    @Override
+    public boolean isValid() {
+        for (int i = 0; i < points.length - 1; i++) {
+            for (int j = i + 1; j < points.length; j++){
+                if (points[i].equals(points[j])){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public  boolean isExist(){
+        return true;
+    }
 }

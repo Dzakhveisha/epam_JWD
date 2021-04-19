@@ -28,12 +28,13 @@ public class Triangle extends Figure {
         return c;
     }
 
-    public boolean isExists() {
-        return Math.abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY())) / 2 != 0;
+    public boolean isValid() {
+        return !(a.equals(b) || b.equals(c) || c.equals(a));
     }
 
-    public boolean isTriangle() {
-        return !(a.equals(b) || b.equals(c) || c.equals(a));
+    @Override
+    public boolean isExist() {
+        return Math.abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX()) * (b.getY() - a.getY())) / 2 != 0;
     }
 
     @Override

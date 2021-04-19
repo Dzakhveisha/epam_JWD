@@ -43,10 +43,11 @@ public class Square extends Figure {
         return d;
     }
 
-    public boolean isSquare() {
+    public boolean isValid() {
         return !(a.equals(b) || a.equals(c) || a.equals(d) || b.equals(c) || b.equals(d) || c.equals(d));
     }
 
+    @Override
     public boolean isExist() {
         if (Math.abs(a.getY() - b.getY()) != Math.abs(c.getX() - b.getX()))
             return false;

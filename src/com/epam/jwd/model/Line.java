@@ -22,8 +22,14 @@ public class Line extends Figure {
         return secondPoint;
     }
 
-    public boolean isLine() {
+    @Override
+    public boolean isValid() {
         return !firstPoint.equals(secondPoint);
+    }
+
+    @Override
+    public boolean isExist() {
+        return true;
     }
 
     @Override
