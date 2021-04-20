@@ -46,7 +46,7 @@ public class MultyAngleFigurePropertiesStrategy implements FigurePropertiesStrat
             y1 = y2;
         }
         sum += ( figure.getPoints()[0].getX() + x2) * ( y2 - figure.getPoints()[0].getY());
-        return Math.abs(sum) / 2;
+        return Math.abs(sum) / 2.;
     }
 
     private double length(Point a, Point b) {

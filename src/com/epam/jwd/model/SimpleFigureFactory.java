@@ -8,7 +8,6 @@ public enum SimpleFigureFactory implements FigureFactory {
 
     public enum FigureType {LINE, SQUARE, TRIANGLE, MULTI_ANGLE_FIGURE}
 
-
     @Override
     public Figure createFigure(FigureType type, Point... points) throws FigureException {
         Figure figure = null;
